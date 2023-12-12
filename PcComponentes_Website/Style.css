@@ -1,0 +1,82 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
+
+/* preset and variable styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+li {
+    list-style-type: none;
+    padding: 10px 16px;
+    font-size: var(--text-size-02);
+    font-weight: var(--font-wheight-regular);
+}
+
+li:hover {
+    background-color: var(--backgroundcolor-mid);
+}
+
+a {
+    text-decoration: none;
+    color: var(--prymary-color-text-dark);
+}
+
+button {
+    padding: 11px 16px;
+    color: var(--secondary-color-text-light);
+    background-color: var(--backgroundcolor-button);
+    border-radius: var(--botton-border-radius);
+    border: none;
+}
+
+button:hover{
+    background-color: var(--backgroundcolor-button-over);
+}
+
+:root {
+    /* colors */
+    --color-01: #ffffff;
+    --color-02: #F2F2F2;
+    --color-03: #333333;
+    --color-04: #170453;
+    --color-05: #118000;
+    --color-06: #CC4D00;
+    --color-07: #BF0019;
+    --color-08: #FF6000;
+
+    /* background colors */
+    --backgroundcolor-light: var(--color-01);
+    --backgroundcolor-mid: var(--color-02);
+    --backgroundcolor-dark: var(--color-04);
+    --backgroundcolor-button: var(--color-08);
+    --backgroundcolor-button-over:var(--color-06);
+
+    /* text color */
+    --prymary-color-text-dark: var(--color-03);
+    --secondary-color-text-light:var(--color-01);
+    --free-shipping-tag:var(--color-05);
+    --promo-tag:var(--color-06);
+    --shippingday-message:var(--color-05);
+    --alert-message:var(--color-07);
+
+    /* font size*/
+    --text-size-01: 12px;
+    --text-size-02: 14px;
+    --text-size-03: 17px;
+    --text-size-04: 24px;
+
+    /* font weight */
+    --font-wheight-light: 300;
+    --font-wheight-regular: 500;
+    --font-wheight-bold: 700;
+
+    /* border radius */
+    --card-border-radius: 5px;
+    --botton-border-radius: 5px;
+    --tag-border-radius: 2px;
+    --img-border-radius: 10px;
+}
