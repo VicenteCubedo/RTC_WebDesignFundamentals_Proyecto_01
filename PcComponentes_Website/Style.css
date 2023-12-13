@@ -142,8 +142,30 @@ h3 {
 
 }
 
+/* Estilos del main/hero */
+
+#hero{
+    padding: 32px;
+    background-color: var(--backgroundcolor-dark);
+}
+
+.categories01{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    min-height: 6rem;
+    justify-items: center;
+}
+
+.grid img{
+    border-radius: var(--card-border-radius);
+    width: 100%;
+    max-width: 350px;
+    min-width: 180px;
+} 
+/* header media query */
 @media (max-width:1000px) {
-    /* header media query */
+    
     .fi-rr-menu-burger {
         display: block;
     }
@@ -168,6 +190,16 @@ h3 {
 
 }
 
+/* hero media query */
+@media (max-width:1220px) {
+    .categories01 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        min-height: 6rem;
+    }
+}
+
 @media (max-width:768px) {
     /* header media query */
     .headerbuttons h3 {
@@ -181,4 +213,19 @@ h3 {
     header > div > img {
         width: 64px;
     }
+
+    .categories01 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        min-height: 6rem;
+    }
+
+    .grid img{
+        min-width: 160px;
+    } 
+
+    #hero{
+        padding: 32px 10px;
+    }     
 }
