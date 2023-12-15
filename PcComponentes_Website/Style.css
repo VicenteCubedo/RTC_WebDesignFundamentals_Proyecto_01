@@ -1,6 +1,7 @@
 /* fonts & icons */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
 @import url('https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
 
 /* preset and variable styles */
 * {
@@ -26,15 +27,17 @@ a {
     color: var(--prymary-color-text-dark);
 }
 
-button {
-    padding: 11px 16px;
+.button {
+    padding: 16px 16px;
     color: var(--secondary-color-text-light);
     background-color: var(--backgroundcolor-button);
     border-radius: var(--botton-border-radius);
     border: none;
+    width: 120px;
+    text-align: center;
 }
 
-button:hover{
+.button:hover{
     background-color: var(--backgroundcolor-button-over);
 }
 
@@ -43,8 +46,18 @@ input {
     outline: none;
 }
 
+h2 {
+    font-size: var(--text-size-04);
+    font-weight: var(--font-wheight-bold);
+}
+
 h3 {
     font-size: var(--text-size-03);
+    font-weight: var(--font-wheight-light);
+}
+
+h4 {
+    font-size: var(--text-size-02);
     font-weight: var(--font-wheight-light);
 }
 
@@ -59,6 +72,7 @@ h3 {
     --color-07: #CC4D00;
     --color-08: #BF0019;
     --color-09: #FF6000;
+    --color-10: #e09c1f;
 
     /* background colors */
     --backgroundcolor-light: var(--color-01);
@@ -66,14 +80,18 @@ h3 {
     --backgroundcolor-dark: var(--color-05);
     --backgroundcolor-button: var(--color-09);
     --backgroundcolor-button-over:var(--color-07);
+    --backgroundcolor-offer-tag: var(--color-08);
+    --backgroundcolor-type-tag: var(--color-05);
 
     /* text color */
     --prymary-color-text-dark: var(--color-05);
     --secondary-color-text-light:var(--color-01);
-    --free-shipping-tag:var(--color-08);
-    --promo-tag:var(--color-07);
+    --free-shipping-tag:var(--color-06);
+    --promo-tag:var(--color-08);
+    --price-offer:var(--color-08);
     --shippingday-message:var(--color-07);
     --alert-message:var(--color-09);
+    --rating-stars:var(--color-10);
 
     /* font size*/
     --text-size-01: 12px;
@@ -87,9 +105,9 @@ h3 {
     --font-wheight-bold: 700;
 
     /* border radius */
-    --card-border-radius: 5px;
+    --card-border-radius: 10px;
     --botton-border-radius: 5px;
-    --tag-border-radius: 2px;
+    --tag-border-radius: 5px;
     --img-border-radius: 10px;
 }
 
@@ -142,19 +160,33 @@ h3 {
 
 }
 
-/* Estilos del main/hero */
+/* Main/hero style */
+
+.promobanner img{
+    border-radius: var(--card-border-radius);
+    width: 100%;
+    margin-bottom: 20px;
+} 
+
+.bannermobile{
+    border-radius: var(--card-border-radius);
+    width: 100%;
+    margin-bottom: 1rem;
+    display: none;
+}
 
 #hero{
     padding: 32px;
     background-color: var(--backgroundcolor-dark);
 }
 
-.categories01{
+.categories01 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 1rem;
     min-height: 6rem;
     justify-items: center;
+    padding-bottom: 20px;
 }
 
 .grid img{
@@ -163,6 +195,146 @@ h3 {
     max-width: 350px;
     min-width: 180px;
 } 
+
+/* Main/iconrow style */
+
+#iconrow {
+    display: flex;
+    justify-content: start;
+    padding: 32px;
+    margin: 32px 0px;
+    gap: 6rem;
+    overflow-x: scroll;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    min-width: 100px;
+}
+
+.icons img {
+    width: 80px;
+}
+
+.icons p {
+    text-align: center;
+    font-size: var(--text-size-02);
+    color: var(--prymary-color-text-dark);
+    font-weight: var(--font-wheight-light);
+}
+
+#topselection{
+    margin: 16px 0px;
+    padding: 64px 32px;
+    display: flex;
+    gap: 3rem;
+    background-color: var(--backgroundcolor-mid);
+}
+
+.topselectiontext{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 350px;
+}
+
+.topselectioncards{
+    display: flex;
+}
+
+/* Product Card style */
+.productcard {
+    background-color: var(--backgroundcolor-light);
+    border-radius: var(--card-border-radius);
+    padding: 16px;
+    width: 260px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardtag {
+    border-radius: var(--tag-border-radius);
+    font-size: var(--text-size-01);
+    padding: 5px 10px;
+}
+
+.offer { 
+    background-color: var(--backgroundcolor-offer-tag);
+    color: var(--secondary-color-text-light);
+    width: 50px;
+    z-index: 1;
+}
+
+.productcard > img {
+    width: 180px;
+    margin-top: -16px;
+}
+
+.cardtags{
+    margin-top: -20px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.christmas {
+    background-color: var(--backgroundcolor-type-tag);
+    color: var(--secondary-color-text-light);
+}
+
+.delivery {
+    color: var(--free-shipping-tag);
+    border: solid 1px var(--free-shipping-tag);
+}
+
+.pricecard {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.priceoffer {
+    font-size: var(--text-size-03);
+    color: var(--price-offer);
+    font-weight: var(--font-wheight-bold);
+}
+
+.pricebefore {
+    font-size: var(--text-size-01);
+    text-decoration: line-through;
+    color: var(--prymary-color-text-dark);
+    font-weight: var(--font-wheight-light)
+}
+
+.cardadvisetex {
+    font-size: var(--text-size-01);
+    color: var(--alert-message);
+    padding: 4px 0;
+}
+
+.ratingstarscard {
+    display: flex;
+    gap: 10px;
+}
+
+.fi-sr-star {
+    color: var(--rating-stars);
+    font-size: var(--text-size-02);
+    margin: 0 -3px;
+}
+
+.ratingstarscard >p{
+    font-size: var(--text-size-01);
+    font-weight: var(--font-wheight-light);
+
+}
+
+
+
 /* header media query */
 @media (max-width:1000px) {
     
@@ -214,6 +386,15 @@ h3 {
         width: 64px;
     }
 
+    .bannerdesktop {
+        display: none;
+    } 
+    
+    .bannermobile {
+        display: block;
+        margin-bottom: 0.5rem;
+
+    }
     .categories01 {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
