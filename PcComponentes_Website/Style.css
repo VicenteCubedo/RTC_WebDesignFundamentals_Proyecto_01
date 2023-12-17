@@ -28,6 +28,10 @@ a {
     color: var(--prymary-color-text-dark);
 }
 
+a:hover {
+    color: var(--color-09);
+}
+
 .button {
     padding: 16px 16px;
     color: var(--secondary-color-text-light);
@@ -47,6 +51,10 @@ a {
 input {
     border: none;
     outline: none;
+}
+
+p {
+    font-size: var(--text-size-02);
 }
 
 h2 {
@@ -142,7 +150,7 @@ h4 {
     grid-template-columns: repeat(3, 1fr);
 }
 
-.headerbuttons div {
+.headerbuttons div a {
     display: flex;
     justify-content: center;
     gap:10px;
@@ -373,7 +381,7 @@ h4 {
 #contest {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 64px 32px;
+    padding: 64px 32px 64px 32px;
     gap: 32px;
     background-color: var(--backgroundcolor-dark);
 }
@@ -435,15 +443,14 @@ h4 {
 }
 
 /* Footer styles */
-footer > section {
+.footernav {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    justify-items: center;
     padding: 64px 32px;
     gap: 32px;
 }
 
-footer > section > nav > h3 {
+.footernav > nav > h3 {
     font-weight: var(--font-wheight-bold);
 }
 
@@ -455,8 +462,18 @@ li > a {
 .Copyright {
     display: flex;
     justify-content: space-between;
+    padding: 10px 32px 16px;
+    background-color: var(--backgroundcolor-mid);
 }
 
+.Copyright * {
+    font-size:var(--text-size-01);
+    font-weight: var(--font-wheight-light);
+}
+
+.fi-brands-linkedin{
+    color: var(--backgroundcolor-button);
+}
 
 
 /* header & footer media query */
@@ -484,7 +501,7 @@ li > a {
         display: none;
     }
 
-    footer > section {
+    .footernav {
         grid-template-columns: repeat(3, 1fr);
         padding: 32px;
     }
@@ -572,9 +589,19 @@ li > a {
         row-gap: 32px;
     }
 
-    footer > section {
+    .registerform {
+        padding: 16px;
+    }
+
+    .footernav {
         grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
-        padding: 32px 16px;
+        padding:32px;
+    }
+
+    .Copyright {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
     }
 }
