@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
 @import url('https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
 @import url('https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/2.0.0/uicons-brands/css/uicons-brands.css');
 
 /* preset and variable styles */
 * {
@@ -33,7 +34,9 @@ a {
     background-color: var(--backgroundcolor-button);
     border-radius: var(--botton-border-radius);
     border: none;
-    width: 120px;
+    width: 130px;
+    min-width: 120px;
+    height: 56px;
     text-align: center;
 }
 
@@ -49,6 +52,8 @@ input {
 h2 {
     font-size: var(--text-size-04);
     font-weight: var(--font-wheight-bold);
+    padding-top: 10px;
+    padding-right: 5px;
 }
 
 h3 {
@@ -59,6 +64,7 @@ h3 {
 h4 {
     font-size: var(--text-size-02);
     font-weight: var(--font-wheight-light);
+    height: 60px;
 }
 
 :root {
@@ -73,6 +79,7 @@ h4 {
     --color-08: #BF0019;
     --color-09: #FF6000;
     --color-10: #e09c1f;
+    --color-11: #8c44f1;
 
     /* background colors */
     --backgroundcolor-light: var(--color-01);
@@ -82,6 +89,7 @@ h4 {
     --backgroundcolor-button-over:var(--color-07);
     --backgroundcolor-offer-tag: var(--color-08);
     --backgroundcolor-type-tag: var(--color-05);
+    --backgroundcolor-type-pack: var(--color-11);
 
     /* text color */
     --prymary-color-text-dark: var(--color-05);
@@ -92,12 +100,15 @@ h4 {
     --shippingday-message:var(--color-07);
     --alert-message:var(--color-09);
     --rating-stars:var(--color-10);
+    --rating-stars-empty:var(--color-03);
+    --pack-tag: var(--color-11);
 
     /* font size*/
     --text-size-01: 12px;
     --text-size-02: 14px;
     --text-size-03: 17px;
     --text-size-04: 24px;
+    --text-size-05: 40px;
 
     /* font weight */
     --font-wheight-light: 300;
@@ -226,6 +237,7 @@ h4 {
     font-weight: var(--font-wheight-light);
 }
 
+/* Main/TOP selection style */
 #topselection{
     margin: 16px 0px;
     padding: 64px 32px;
@@ -243,6 +255,9 @@ h4 {
 
 .topselectioncards{
     display: flex;
+    gap: 24px;
+    padding: 0px 0px 24px 0px;
+    overflow-x: scroll;
 }
 
 /* Product Card style */
@@ -250,8 +265,12 @@ h4 {
     background-color: var(--backgroundcolor-light);
     border-radius: var(--card-border-radius);
     padding: 16px;
-    width: 260px;
+    max-width: 260px;
+    min-width: 250px;
     height: 360px;
+}
+
+.productcard > a{
     display: flex;
     flex-direction: column;
 }
@@ -269,9 +288,10 @@ h4 {
     z-index: 1;
 }
 
-.productcard > img {
+.cardimg {
     width: 180px;
     margin-top: -16px;
+    align-self: center;
 }
 
 .cardtags{
@@ -289,6 +309,13 @@ h4 {
 .delivery {
     color: var(--free-shipping-tag);
     border: solid 1px var(--free-shipping-tag);
+    background-color: var(--backgroundcolor-light);
+}
+
+.pack {
+    color: var(--pack-tag);
+    border: solid 1px var(--backgroundcolor-type-pack);
+    background-color: var(--backgroundcolor-light);
 }
 
 .pricecard {
@@ -321,21 +348,118 @@ h4 {
     gap: 10px;
 }
 
-.fi-sr-star {
-    color: var(--rating-stars);
+.fi-sr-star{
     font-size: var(--text-size-02);
     margin: 0 -3px;
 }
+.fivestars > i {
+    color: var(--rating-stars);
+}
 
-.ratingstarscard >p{
+.fourstars > i {
+    color: var(--rating-stars);
+}
+
+.fourstars :nth-child(5) {
+    color:var(--rating-stars-empty);
+}
+.ratingstarscard > p{
     font-size: var(--text-size-01);
     font-weight: var(--font-wheight-light);
+}
 
+/* Contest ROW */
+
+#contest {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 64px 32px;
+    gap: 32px;
+    background-color: var(--backgroundcolor-dark);
+}
+
+.claimcontest > h2{
+    color: var(--secondary-color-text-light);
+    font-size: var(--text-size-05);
+    font-weight: var(--font-wheight-regular);
+}
+
+.claimcontest > p{
+    color: var(--secondary-color-text-light);
+    font-size: var(--text-size-03);
+    font-weight: var(--font-wheight-light);
+}
+
+.imgcontest > img {
+    width: 100%;
+}
+
+.registerform {
+    background-color: var(--backgroundcolor-light);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    gap: 32px;
+    justify-content: center;
+}
+
+#registerform div {
+    display: flex;
+    padding: 2px 12px;
+    gap: 10px;
+}
+
+#registerform div > p {
+    font-size: var(--text-size-01);
+}
+
+#registerform > input {
+    border: solid 1px var(--color-03);
+    border-radius: var(--botton-border-radius);
+    padding: 16px 12px;
+    margin-bottom: 12px;
+    align-content: center;
+    width: 100%;
+    font-size: var(--text-size-03);
+    font-weight: var(--font-wheight-light);
+}
+
+#registerform > div > p > a {
+    color: var(--color-07);
+}
+
+.formcta {
+    margin-top: 16px;
+    width: 100%;
+}
+
+/* Footer styles */
+footer > section {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    padding: 64px 32px;
+    gap: 32px;
+}
+
+footer > section > nav > h3 {
+    font-weight: var(--font-wheight-bold);
+}
+
+li > a {
+    font-weight: var(--font-wheight-light);
+    color: var(--prymary-color-text-dark);
+}    
+
+.Copyright {
+    display: flex;
+    justify-content: space-between;
 }
 
 
 
-/* header media query */
+/* header & footer media query */
 @media (max-width:1000px) {
     
     .fi-rr-menu-burger {
@@ -360,9 +484,12 @@ h4 {
         display: none;
     }
 
+    footer > section {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 32px;
+    }
 }
 
-/* hero media query */
 @media (max-width:1220px) {
     .categories01 {
         display: grid;
@@ -370,6 +497,26 @@ h4 {
         gap: 1rem;
         min-height: 6rem;
     }
+    #topselection{
+        display: flex;
+        flex-direction: column;
+    }
+    .topselectiontext{
+        flex-direction: row;
+        gap: 3rem;
+        width: 100%;
+        justify-content: space-between;
+    }
+    #contest {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 64px;
+    }
+    .claimcontest {
+        grid-column: 1/-1;
+        align-content: center;
+        text-align: center;
+    }
+
 }
 
 @media (max-width:768px) {
@@ -408,5 +555,26 @@ h4 {
 
     #hero{
         padding: 32px 10px;
-    }     
+    }  
+    
+    .topselectiontext{
+        flex-direction: column;
+    }
+    #topselection{
+        padding: 64px 0px 64px 10px;
+    }
+    #iconrow {
+        gap: 3rem;
+    }
+
+    #contest {
+        grid-template-columns: 1fr;
+        row-gap: 32px;
+    }
+
+    footer > section {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        padding: 32px 16px;
+    }
 }
